@@ -1,1 +1,0 @@
-# trail-planner-process-lambda
