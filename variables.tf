@@ -10,3 +10,7 @@ variable "ecr_repo_arn" {
     type = string
     description = "Value is coming from tfvars file that is being updated by buildspec environment variables"
 }
+variable "rds_host" {
+    type = string
+    description = "Rds host value complete"
+}

@@ -39,6 +39,15 @@ resource "aws_iam_role_policy" "iam_policy_for_lambda" {
       "Action": [
         "ecr:GetAuthorizationToken"
       ]
+    },
+    {
+      "Effect": "Allow",
+      "Resource": [
+        "${var.rds_host}"
+      ],
+      "Action": [
+        "rds:*"
+      ]
     }
   ]
 }
@@ -49,4 +58,9 @@ resource "aws_lambda_function" "main" {
     image_uri       = "${var.ecr_repo_url}:latest"
     package_type    = "Image"
     role            = aws_iam_role.iam_for_lambda.arn
+    environment {
+        variables = {
+            "RDS_HOST": var.rds_host
+        }
+    }
 }
