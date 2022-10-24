@@ -43,7 +43,7 @@ resource "aws_iam_role_policy" "iam_policy_for_lambda" {
     {
       "Effect": "Allow",
       "Resource": [
-        "${var.rds_host}"
+        "*"
       ],
       "Action": [
         "rds:*"
