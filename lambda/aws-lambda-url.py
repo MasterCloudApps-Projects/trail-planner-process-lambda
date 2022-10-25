@@ -1,13 +1,12 @@
 import sys
 import logging
-import rds_config
 import pymysql
 import os
 
 rds_host = os.environ.get('RDS_HOST')
-name = rds_config.db_username
-password = rds_config.db_password
-db_name = rds_config.db_name
+name = os.environ.get('RDS_DB_USERNAME')
+password = os.environ.get('RDS_DB_PASSWORD')
+db_name = os.environ.get('RDS_DB_NAME')
 
 logger = logging.getLogger()
 logger.setLevel(logging.INFO)

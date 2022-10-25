@@ -14,3 +14,15 @@ variable "rds_host" {
     type = string
     description = "Rds host value complete"
 }
+variable "rds_db_username" {
+    type = string
+    description = "Rds host value complete"
+}
+variable "rds_db_password" {
+    type = string
+    description = "Rds host value complete"
+}
+variable "rds_db_name" {
+    type = string
+    description = "Rds host value complete"
+}

@@ -61,6 +61,9 @@ resource "aws_lambda_function" "main" {
     environment {
         variables = {
             "RDS_HOST": var.rds_host
+            "RDS_DB_USERNAME": var.rds_db_username
+            "RDS_DB_PASSWORD": var.rds_db_password
+            "RDS_DB_NAME": var.rds_db_name
         }
     }
 }
