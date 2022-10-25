@@ -26,3 +26,11 @@ variable "rds_db_name" {
     type = string
     description = "Rds host value complete"
 }
+variable "subnet_id" {
+    type = string
+    description = "Rds host value complete"
+}
+variable "sg_id" {
+    type = string
+    description = "Rds host value complete"
+}

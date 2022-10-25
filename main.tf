@@ -58,6 +58,10 @@ resource "aws_lambda_function" "main" {
     image_uri       = "${var.ecr_repo_url}:latest"
     package_type    = "Image"
     role            = aws_iam_role.iam_for_lambda.arn
+    vpc_config {
+        subnet_ids         = [var.subnet_id]
+        security_group_ids = [var.sg_id]
+    }
     environment {
         variables = {
             "RDS_HOST": var.rds_host
