@@ -48,6 +48,20 @@ resource "aws_iam_role_policy" "iam_policy_for_lambda" {
       "Action": [
         "rds:*"
       ]
+    },
+    {
+        "Effect": "Allow",
+        "Action": [
+                "logs:CreateLogGroup",
+                "logs:CreateLogStream",
+                "logs:PutLogEvents",
+                "ec2:CreateNetworkInterface",
+                "ec2:DescribeNetworkInterfaces",
+                "ec2:DeleteNetworkInterface",
+                "ec2:AssignPrivateIpAddresses",
+                "ec2:UnassignPrivateIpAddresses"
+        ],
+        "Resource": "*"
     }
   ]
 }
